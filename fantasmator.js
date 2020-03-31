@@ -1,4 +1,4 @@
-class Fantasmator {
+export default class Fantasmator {
 
   set persons(val) {
     if (val instanceof Array) {
@@ -98,10 +98,3 @@ class Fantasmator {
   }
 
 }
-
-module.exports = Fantasmator;
-
-// console.log((new Fantasmator({
-//   persons: ['dani', 'juli', 'marius', 'azize', 'patxi', 'dani'],
-//   startDate: '2020-03-24'
-// })).getPerson());

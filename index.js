@@ -1,6 +1,10 @@
-const Fantasmator = require('./fantasmator');
+import Fantasmator from './fantasmator.js';
 
-console.log((new Fantasmator({
-  persons: ['dani', 'juli', 'marius', 'azize', 'patxi', 'dani'],
-  startDate: '2020-03-24'
-})).getPerson());
+(function() {
+  const fantasmator = new Fantasmator({
+    persons: ['Dani', 'Juli', 'Marius', 'Azize', 'Patxi'],
+    startDate: '2020-03-24'
+  });
+  const person = fantasmator.getPerson();
+  console.log(person);
+})();
