@@ -4,46 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fantasmator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <h1 class="page-title">FANTASMATOR</h1>
   <div class="fantasmator">
     <div class="fantasmator__current">
-      <img src="https://seeklogo.com/images/S/Superman-logo-DBF50036CC-seeklogo.com.png">
-      <h2 class="fantasmator__current-title">Dani</h2>
+      <img
+        id="main-image"
+        class="fantasmator__current-image"
+        src="./img/dani.jpeg"
+      >
+      <h2 id="main-title" class="fantasmator__current-title">Dani</h2>
+      <small id="main-date" class="fantasmator__current-date">Tue Apr 21 2020</small>
     </div>
     <div class="fantasmator__next">
       <p class="fantasmator__next-title">Próximos fantasmas</p>
-      <ul class="fantasmator__list">
-        <li class="fantasmator__item">
-          <img
-            class="fantasmator__avatar"
-            src="https://scontent.fmad12-2.fna.fbcdn.net/v/t1.0-9/38085646_1116543708493607_661131780526440448_n.jpg?_nc_cat=107&_nc_sid=2d5d41&_nc_ohc=5CQjq55vQYgAX96HxOd&_nc_ht=scontent.fmad12-2.fna&oh=7a66e673d99a07d20b3d15edecb886f0&oe=5EA9BC3D"
-          >
-          <p class="fantasmator__name">Juli</p>
-        </li>
-        <li class="fantasmator__item">
-          <img
-            class="fantasmator__avatar"
-            src="https://scontent.fmad12-2.fna.fbcdn.net/v/t1.0-9/38085646_1116543708493607_661131780526440448_n.jpg?_nc_cat=107&_nc_sid=2d5d41&_nc_ohc=5CQjq55vQYgAX96HxOd&_nc_ht=scontent.fmad12-2.fna&oh=7a66e673d99a07d20b3d15edecb886f0&oe=5EA9BC3D"
-          >
-          <p class="fantasmator__name">Juli</p>
-        </li>
-        <li class="fantasmator__item">
-          <img
-            class="fantasmator__avatar"
-            src="https://scontent.fmad12-2.fna.fbcdn.net/v/t1.0-9/38085646_1116543708493607_661131780526440448_n.jpg?_nc_cat=107&_nc_sid=2d5d41&_nc_ohc=5CQjq55vQYgAX96HxOd&_nc_ht=scontent.fmad12-2.fna&oh=7a66e673d99a07d20b3d15edecb886f0&oe=5EA9BC3D"
-          >
-          <p class="fantasmator__name">Juli</p>
-        </li>
-        <li class="fantasmator__item">
-          <img
-            class="fantasmator__avatar"
-            src="https://scontent.fmad12-2.fna.fbcdn.net/v/t1.0-9/38085646_1116543708493607_661131780526440448_n.jpg?_nc_cat=107&_nc_sid=2d5d41&_nc_ohc=5CQjq55vQYgAX96HxOd&_nc_ht=scontent.fmad12-2.fna&oh=7a66e673d99a07d20b3d15edecb886f0&oe=5EA9BC3D"
-          >
-          <p class="fantasmator__name">Juli</p>
-        </li>
+      <ul id="fantasmator-list" class="fantasmator__list">
+        <template id="fantasmator-item-template">
+          <li class="fantasmator__item">
+            <div class="fantasmator__avatar-wrapper">
+              <img class="fantasmator__avatar" src="{{image}}">
+            </div>
+            <p>
+              <span class="fantasmator__name">{{name}}</span><br>
+              <small class="fantasmator__date">{{date}}</small>
+            </p>
+          </li>
+        </template>
       </ul>
     </div>
   </div>

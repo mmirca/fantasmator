@@ -40,12 +40,12 @@ export default class Fantasmator {
     return this._startDate || new Date(`${today.getFullYear()}-01-1`);
   }
 
-  get _dayLength() {
+  get dayLength() {
     return 24 * 60 * 60 * 1000;
   }
 
-  get _weekLength() {
-    return this._dayLength * 7;
+  get weekLength() {
+    return this.dayLength * 7;
   }
 
   get _maxWeeksInAYear() {
@@ -59,22 +59,28 @@ export default class Fantasmator {
   }
 
   getPerson() {
-    let index = this._getWeeksSinceStartDate() % this.persons.length;
+    const { weeksSinceStartDate } = this._getCycleStartDate();
+    let index = weeksSinceStartDate % this.persons.length;
     while (!this.persons[index] && index < this.persons.length + 1) {
       index++;
     }
     return this.persons[index];
   }
 
-  _getWeeksSinceStartDate() {
+  getCycleStartDate() {
+    const { startDate } = this._getCycleStartDate();
+    return startDate;
+  }
+
+  _getCycleStartDate() {
     const today = this._getTodayDate();
     let weeksSinceStartDate = 0;
     let startDate = this._getStartDate();
     while(!this._isInWeekRange(startDate, today) && weeksSinceStartDate < this._maxWeeksInAYear) {
-      startDate = new Date(startDate.getTime() + this._weekLength);
+      startDate = new Date(startDate.getTime() + this.weekLength);
       weeksSinceStartDate++;
     }
-    return weeksSinceStartDate;
+    return { weeksSinceStartDate, startDate };
   }
 
   _getTodayDate() {
@@ -86,14 +92,14 @@ export default class Fantasmator {
     let startDate = this.startDate;
     let failSafe = 0;
     while(startDate.getDay() !== this.changeDayIndex && failSafe < 8) {
-      startDate = new Date(startDate.getTime() + this._dayLength);
+      startDate = new Date(startDate.getTime() + this.dayLength);
       failSafe++;
     }
     return startDate;
   }
 
   _isInWeekRange(dateA, dateB) {
-    const endRangeDay = new Date(dateA.getTime() + this._weekLength);
+    const endRangeDay = new Date(dateA.getTime() + this.weekLength);
     return (dateA.getTime() < dateB.getTime()) && (dateB.getTime() < endRangeDay.getTime());
   }
 
