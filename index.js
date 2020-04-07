@@ -6,7 +6,8 @@ import Fantasmator from './fantasmator.js';
     { name: 'Juli', avatar: './img/juli.jpg' },
     { name: 'Marius', avatar: './img/marius.jpg' },
     { name: 'Azize', avatar: './img/azize.png' },
-    { name: 'Patxi', avatar: './img/patxi.jpg' }
+    { name: 'Patxi', avatar: './img/patxi.jpg' },
+    { name: 'Iván', avatar: './img/ivan.png' }
   ];
   const $mainImage = document.querySelector('#main-image');
   const $mainTitle = document.querySelector('#main-title');
