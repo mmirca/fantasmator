@@ -2,12 +2,11 @@ import Fantasmator from './fantasmator.js';
 
 (function() {
   const persons = [
-    { name: 'Dani', avatar: './img/dani.jpeg' },
-    { name: 'Juli', avatar: './img/juli.jpg' },
     { name: 'Marius', avatar: './img/marius.jpg' },
     { name: 'Azize', avatar: './img/azize.png' },
-    { name: 'Patxi', avatar: './img/patxi.jpg' },
-    { name: 'Iván', avatar: './img/ivan.png' }
+    { name: 'Iván', avatar: './img/ivan.png' },
+    { name: 'Dani', avatar: './img/dani.jpeg' },
+    { name: 'Juli', avatar: './img/juli.jpg' }
   ];
   const $mainImage = document.querySelector('#main-image');
   const $mainTitle = document.querySelector('#main-title');
@@ -16,7 +15,7 @@ import Fantasmator from './fantasmator.js';
   const $fantasmatorItemTemplate = document.querySelector('#fantasmator-item-template');
 
   const fantasmator = new Fantasmator({
-    startDate: '2020-03-24',
+    startDate: '2020-04-07',
     persons
   });
 
