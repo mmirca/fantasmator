@@ -4,8 +4,8 @@ import Fantasmator from './fantasmator.js';
   const persons = [
     { name: 'Marius', avatar: './img/marius.jpg' },
     { name: 'Azize', avatar: './img/azize.png' },
-    { name: 'Iván', avatar: './img/ivan.png' },
-    { name: 'Dani', avatar: './img/dani.jpeg' },
+    { name: 'Ricardo', avatar: './img/ricardo.jpg' },
+    { name: 'Dani', avatar: './img/dani.png' },
     { name: 'Juli', avatar: './img/juli.jpg' }
   ];
   const $mainImage = document.querySelector('#main-image');
